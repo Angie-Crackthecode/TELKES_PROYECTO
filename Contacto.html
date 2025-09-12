@@ -1,0 +1,95 @@
+<!--
+Descripción de la sección "Contacto":
+
+La sección de “Contacto”, la cual está constituida por un formulario simple que solicita información personal como nombre completo, teléfono, 
+correo electrónico y mensaje, además de estar acompañada de imágenes referentes al empoderamiento femenino, fue implementada con el objetivo de 
+establecer una comunicación directa con jóvenes, adolescentes y mujeres interesadas en el proyecto. A través de este espacio, ellas podrán solicitar 
+información adicional o compartir datos valiosos para la comunidad, tales como convocatorias de becas, concursos, oportunidades académicas o 
+profesionales, así como testimonios de experiencias que hayan generado beneficios y aprendizajes.
+
+Del mismo modo, esta sección también está dirigida a personas o instituciones que deseen difundir iniciativas, programas o cursos orientados a 
+mujeres y jóvenes. Toda la información recibida será revisada con rigor y cuidado, con el propósito de evitar riesgos de estafa o 
+publicidad malintencionada.
+
+Nos comprometemos a brindar respuestas claras y oportunas, asegurando que cada consulta o duda sea atendida de manera responsable, 
+de modo que nuestras usuarias se sientan acompañadas y respaldadas en su búsqueda de oportunidades. -->
+
+
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Telkes | Contacto</title>
+<link rel="stylesheet" href="Contacto.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+<body>
+
+<!-- Navbar -->
+<header>
+  <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container">
+                <a class="navbar-brand text-white" href="#">TELKES</a>
+                <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">INICIO</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Peruanas.html">PERUANAS</a></li>
+                        <li class="nav-item"><a class="nav-link" href="oportunidades.html">OPORTUNIDADES</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Contacto.html">CONTACTO</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+</header>
+
+<main>
+    <h2>Contáctanos 🤍</h2>
+    <h5>Déjanos tu mensaje y te contestaremos lo antes posible.</h5>
+
+    <form>
+        <label for="nom">Nombre Completo:</label>
+        <input type="text" id="nom" name="nom" required>
+
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" required>
+
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje"></textarea>
+
+        <button type="submit">Enviar Mensaje</button>
+    </form>
+
+    <!-- Imágenes -->
+    <img src="Img/Img_izquierda.webp" alt="Persona con megáfono" class="img-izquierda">
+    <img src="Img/Img_derecha.webp" alt="Grupo Girls Power" class="img-derecha">
+</main>
+
+<footer>
+    <div class="contenido_footer">
+        <p><strong>TELKES</strong><br><br>
+        📞 +51 936789254<br>
+        🌐 www.telkes_peru.com<br>
+        ✉ telkes_peru@gmail.com</p>
+
+        <div class="iconos">
+            <a href="https://www.facebook.com"><img src="Img/Facebook.jpg" alt="Facebook"></a>
+            <a href="https://www.instagram.com"><img src="Img/Instagram (2).png" alt="Instagram"></a>
+            <a href="https://x.com"><img src="Img/Twitter.png" alt="Twitter"></a>
+        </div>
+
+        <p style="font-size: 12px; margin-top: 10px;">
+            © 2025 Proyecto Telkes-Perú. Todos los derechos reservados.
+        </p>
+    </div>
+</footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

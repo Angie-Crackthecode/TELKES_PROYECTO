@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oportunidades para Mujeres Jóvenes</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="concursos.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<h1>Oportunidades y Concursos para Mujeres</h1>
+<a href="oportunidades.html" class="btn-retroceso">⟵ Volver</a>
+<div class="accordion">
+
+  <div class="accordion-item">
+    <div class="accordion-title">1. Olimpiada Nacional Escolar de Matemática (ONEM) <span>▼</span></div>
+    <div class="accordion-content">
+      <p>Para estudiantes de secundaria, con premios como laptops, smartphones y hasta S/ 50 000.</p>
+      <a href="https://es.wikipedia.org/wiki/Olimpiada_Nacional_Escolar_de_Matem%C3%A1tica" target="_blank">Wikipedia</a>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <div class="accordion-title">2. Premios L’Oréal-UNESCO para Mujeres en Ciencia <span>▼</span></div>
+    <div class="accordion-content">
+      <p>Becas de hasta $40 000 + premios globales de 100 000 EUR. Reconocimiento a científicas a nivel mundial y regional.</p>
+      <a href="https://es.wikipedia.org/wiki/Premios_L%27Or%C3%A9al-UNESCO_a_Mujeres_en_Ciencia" target="_blank">Wikipedia</a>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <div class="accordion-title">3. Olimpiada Informática Femenina (OIFem) <span>▼</span></div>
+    <div class="accordion-content">
+      <p>Concurso de programación para chicas de secundaria menores de 20 años. Incluye entrenamientos y final presencial en Barcelona (UPC).</p>
+      <a href="https://www.formate.pe" target="_blank">www.formate.pe</a><br>
+      <a href="https://especial.larepublica.pe/vulnerabilidad-cero/educacion-y-empleabilidad/2025/06/26/beca-gestoras-culturales-2025-inicia-convocatoria-para-mujeres-en-gestion-cultural-2205190" target="_blank">La República - Especial</a>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <div class="accordion-title">4. Zonta International Scholarships <span>▼</span></div>
+    <div class="accordion-content">
+      <ul>
+        <li><strong>Amelia Earhart Fellowship:</strong> $10 000 para doctorado en aeroespacial o ingeniería aérea.</li>
+        <li><strong>Jane M. Klausman Award:</strong> Para mujeres en administración (pregrado o maestría).</li>
+        <li><strong>YWPA:</strong> Para jóvenes de 16 a 19 años con liderazgo en asuntos públicos.</li>
+      </ul>
+      <a href="https://es.wikipedia.org/wiki/Zonta_International" target="_blank">Wikipedia</a>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  const items = document.querySelectorAll('.accordion-item');
+  items.forEach(item => {
+    item.querySelector('.accordion-title').addEventListener('click', () => {
+      item.classList.toggle('active');
+    });
+  });
+</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

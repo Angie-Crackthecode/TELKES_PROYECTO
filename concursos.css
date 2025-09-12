@@ -1,0 +1,148 @@
+  body {
+      background-image: url('Add\ a\ heading.jpg'); 
+      background-size: cover; /* ajusta la imagen al tamaño de la pantalla */
+      background-repeat: no-repeat; /* evita que se repita */
+      background-position: center; /* centra la imagen */
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 40px 20px;
+      color: #333;
+    }
+  .btn-retroceso {
+      position: absolute;
+      top: 20px; 
+      left: 20px; 
+      padding: 10px 15px;
+      background-color: #9c399cff;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+  .btn-retroceso:hover {
+    background-color: #800080ff;
+  }
+  h1 {
+    text-align: center;
+    color: #800080ff;
+    margin-bottom: 40px;
+  }
+
+  .accordion {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .accordion-item {
+    background-color: #f1e3f1ff;
+    border-radius: 18px;
+    margin-bottom: 15px;
+  }
+  .accordion-title {
+    padding: 18px 20px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    background-color: #e3c6e3ff;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 8px solid transparent;
+  }
+
+  .accordion-title:hover {
+    background-color: #d5aad5ff;
+    border-left: 5px solid #800080ff;
+  }
+
+  .accordion-title span {
+    transition: transform 0.3s ease;
+    font-size: 1.3rem;
+    color: #9c399cff;
+  }
+
+  .accordion-content {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background-color: #f1e3f1ff;
+  }
+
+  .accordion-content p, 
+  .accordion-content ul {
+    margin: 15px 0;
+    font-size: 0.95rem;
+    color: #555;
+  }
+
+  a {
+    color: #8e1c8eff;
+    text-decoration: underline;
+  }
+
+  .accordion-item.active .accordion-content {
+    max-height: 300px;
+    padding-bottom: 20px;
+  }
+
+  .accordion-item.active .accordion-title span {
+    transform: rotate(180deg);
+  }
+   /* Tablets (≤950px) */
+    @media (max-width: 950px) {
+      body {
+        padding: 20px 10px;
+        background-image: url('pantalla.jpg'); 
+        background-size: cover; /* ajusta la imagen al tamaño de la pantalla */
+        background-repeat: no-repeat; /* evita que se repita */
+        background-position: center; /* centra la imagen */
+        font-family: 'Segoe UI', sans-serif;
+        margin: 0;
+      }
+      h1 {
+        font-size: 1.7rem;
+      }
+      .accordion {
+        max-width: 90%;
+      }
+      .btn-retroceso {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+      }
+    }
+
+    /* Celulares (≤500px) */
+    @media (max-width: 500px) {
+      body {
+        padding: 15px 5px;
+        background-image: url('pantalla\ 500.jpg'); 
+        background-size: cover; /* ajusta la imagen al tamaño de la pantalla */
+        background-repeat: no-repeat; /* evita que se repita */
+        background-position: center; /* centra la imagen */
+        font-family: 'Segoe UI', sans-serif;
+        margin: 0;
+      }
+      h1 {
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+      }
+      .accordion-title {
+        font-size: 1rem;
+        padding: 15px;
+      }
+      .accordion-title span {
+        font-size: 1.1rem;
+      }
+      .accordion-content p {
+        font-size: 0.85rem;
+      }
+      .btn-retroceso {
+        top: 10px;
+        left: 10px;
+        font-size: 0.8rem;
+        padding: 6px 10px;
+      }
+    }
