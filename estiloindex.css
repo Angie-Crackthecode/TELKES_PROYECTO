@@ -137,7 +137,6 @@
 
     .presentacion h1 {
         font-size: 4rem;
-
     }
 
     .presentacion h5 {
@@ -207,4 +206,102 @@
         font-size: 0.8rem;
         padding: 15px;
     }
+
+      #datos-usuario {
+    display: block;
+    margin: 10px 0;
+    text-align: center;
+    }
+
+    #btn-open-login,
+    #btn-logout {
+    margin: 5px auto;
+    display: block;
+    width: 100%;
+    }
+}
+
+/*  Estilos Login/Registro */
+
+/* Ocultar elementos hasta loguear */
+.oculto {
+  display: none !important;
+}
+
+/* Texto de usuario */
+#datos-usuario {
+  color: white !important;;
+  font-weight: 600;
+  margin-right: 10px;
+  align-self: center;
+}
+
+/* Botones de login/logout */
+#btn-open-login,
+#btn-logout {
+    color: #800080ff !important;
+    background-color: #c78ec7ff ;
+    border-radius: 20px;
+    padding: 6px 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+#btn-open-login:hover,
+#btn-logout:hover {
+    background-color: #c78ec7ff;
+    color: white;
+}
+
+
+/*  Estilo para modales */
+.modal-content {
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+.modal-header {
+  background-color: #800080ff;
+  color: white;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.modal-title {
+  font-weight: 600;
+}
+
+.modal-footer button {
+  border-radius: 15px;
+}
+
+/* Botón primario personalizado */
+.btn-primary {
+  background-color: #800080ff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #4b0082;
+}
+
+/* Botón secundario */
+.btn-secondary {
+  background-color: #c78ec7ff;
+  border: none;
+}
+
+.btn-secondary:hover {
+  background-color: #800080ff;
+}
+
+/* Botón de registro */
+.btn-success {
+  background-color: #4b0082;
+  border: none;
+}
+
+.btn-success:hover {
+  background-color: #2e004d;
 }
