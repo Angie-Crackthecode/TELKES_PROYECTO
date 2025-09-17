@@ -1,194 +1,140 @@
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-    
-    .navbar {
-      background-color: #800080ff;
-      height: 70px;
-    }
-    .navbar-nav .nav-link {
-      color: white !important;
-      font-weight: 500;
-      padding: 10px 20px;
-    }
-    .navbar-nav .nav-link:hover {
-      background-color: #c78ec7ff;
-      border-radius: 20px;
-    }
-    .navbar-toggler-icon {
-        background-image: url(mas.png);
-    }
-    body {
-        font-family: 'Segoe UI', Roboto, sans-serif;
-        background-color: #f8f9fa;
-        margin: 0;
-        padding: 20px;
-        color: #333;
-        
-    }
+body {
+  font-family: "Segoe UI", Roboto, sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
 
-    h1 {
-        font-size: 2rem;
-        color: #4B0082;
-        font-weight: 700;
-        margin-bottom: 20px;
-        text-align: center;
-        padding-top: 80px;
-    }
+h1 {
+  text-align: center;
+  color: white;
+  background-color: #7b2cbf;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
 
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 25px;
-        max-width: 1100px;
-        margin: auto;
-    }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: auto;
+}
 
-    .card {
-        background: #fdf0ff;
-        border-radius: 15px;
-        overflow: hidden;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        position: relative;
-    }
+.card {
+  background: #fdf0ff;
+  border-radius: 15px;
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-    .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    }
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
 
-    .card img {
-        width: 100%;
-        height: 220px;
-        object-fit: cover;
-    }
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
 
-    .card h3 {
-        font-size: 1.3rem;
-        margin: 15px 0 5px;
-    }
+.card h3 {
+  font-size: 1.3rem;
+  margin: 15px 0 5px;
+}
 
-    .card button {
-        background-color: #9d4edd;
-        color: white;
-        border: none;
-        padding: 10px 15px;
-        border-radius: 25px;
-        font-size: 0.9rem;
-        cursor: pointer;
-        margin: 10px auto;
-        transition: background-color 0.3s ease;
-    }
+.card button {
+  background-color: #9d4edd;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin: 10px auto 20px auto;
+  transition: background-color 0.3s ease;
+}
 
-    .card button:hover {
-        background-color: #7b2cbf;
-    }
+.card button:hover {
+  background-color: #7b2cbf;
+}
 
-    .resumen {
-        display: none;
-        padding: 10px 15px;
-        font-size: 0.95rem;
-        color: #555;
-        border-top: 1px solid #ddd;
-    }
+.resumen {
+  display: none;
+  padding: 10px 15px;
+  font-size: 0.95rem;
+  color: #555;
+  border-top: 1px solid #ddd;
+}
 
-    .btn {
-        background-color: #9d4edd;
-        color: white;
-        text-decoration: none;
-        padding: 8px 12px;
-        border-radius: 25px;
-        font-size: 0.85rem;
-        display: inline-block;
-        margin-top: 10px;
-        transition: background-color 0.3s ease;
-    }
+.btn-custom {
+  background-color: #9d4edd;
+  color: white !important;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 25px;
+  font-size: 0.85rem;
+  display: inline-block;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
 
-    .btn:hover {
-        background-color: #7b2cbf;
-    }
-    footer {
-        background-color: #800080ff ;
-        color: white;
-        text-align: center;
-        padding: 20px;
-        margin-top: 70px;
-    }
-    footer .contenido_footer {
-        max-width: 100vw;
-        margin: auto;
-    }
-    footer img {
-        max-width: 80px;
-        margin: 10px;
-    }
-    .iconos a {
-        margin: 0 8px;
-        display: inline-block;
-    }
-    .iconos img {
-        width: 24px;
-    }
+.btn-custom:hover {
+  background-color: #7b2cbf;
+}
 
-    @media (max-width: 450px) {
-    h1 {
-        font-size: 1.5rem;
-        padding-top: 100px; /* más espacio porque la navbar ocupa más en móvil */
-        margin-bottom: 20px;
-    }
+/* Estilo para el formulario */
+.registro-container {
+  max-width: 700px;
+  margin: 50px auto 30px;
+  background-color: #fdf0ff;
+  border-radius: 15px;
+  padding: 25px 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
 
-    .grid {
-        grid-template-columns: 1fr;
-        padding: 0 10px;
-        gap: 20px;
-    }
+.registro-container h2 {
+  text-align: center;
+  color: #7b2cbf;
+  margin-bottom: 25px;
+}
 
-    .card img {
-        height: 180px;
-    }
+.form-label {
+  font-weight: 600;
+  color: #5a3e85;
+}
 
-    .card h3 {
-        font-size: 1.1rem;
-    }
+.btn-submit {
+  background-color: #9d4edd;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: block;
+  margin: 20px auto 0;
+  transition: background-color 0.3s ease;
+}
 
-    .card button {
-        font-size: 0.85rem;
-        padding: 8px 12px;
-    }
+.btn-submit:hover {
+  background-color: #7b2cbf;
+}
 
-    .resumen {
-        font-size: 0.9rem;
-    }
+/* Validaciones de formulario */
+input:invalid,
+textarea:invalid {
+  border-color: #dc35a4;
+}
 
-    .navbar-brand {
-        font-size: 1.2rem;
-    }
-
-    .navbar-nav .nav-link {
-        padding: 8px 10px;
-        font-size: 0.9rem;
-    }
-
-    footer {
-        font-size: 0.85rem;
-        padding: 15px;
-    }
-
-    footer img {
-        max-width: 60px;
-        margin: 8px;
-    }
-
-    .iconos img {
-        width: 20px;
-    }
-
-    .btn {
-        font-size: 0.8rem;
-        padding: 6px 10px;
-    }
+input:valid,
+textarea:valid {
+  border-color: #198754;
 }
