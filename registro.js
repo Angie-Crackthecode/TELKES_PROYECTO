@@ -1,35 +1,38 @@
-// Guardar usuarios en localStorage
-document.getElementById("btn-register").addEventListener("click", () => {
-    const name = document.getElementById("registerName").value.trim();
-    const email = document.getElementById("registerEmail").value.trim();
-    const password = document.getElementById("registerPassword").value;
-    const confirmPassword = document.getElementById("confirmPassword").value;
+document.addEventListener("DOMContentLoaded", () => {
+    const btnRegister = document.getElementById("btn-register");
 
-    if (!name || !email || !password || !confirmPassword) {
-        alert("Por favor completa todos los campos.");
-        return;
-    }
+    btnRegister.addEventListener("click", () => {
+        const name = document.getElementById("registerName").value.trim();
+        const email = document.getElementById("registerEmail").value.trim();
+        const password = document.getElementById("registerPassword").value.trim();
+        const confirmPassword = document.getElementById("confirmPassword").value.trim();
 
-    if (password !== confirmPassword) {
-        alert("Las contraseñas no coinciden.");
-        return;
-    }
+        if (!name || !email || !password || !confirmPassword) {
+            alert("Por favor completa todos los campos.");
+            return;
+        }
 
-    let users = JSON.parse(localStorage.getItem("users")) || [];
+        if (password !== confirmPassword) {
+            alert("Las contraseñas no coinciden.");
+            return;
+        }
 
-    // Validar que el email no esté repetido
-    const exists = users.find(user => user.email === email);
-    if (exists) {
-        alert("El correo ya está registrado.");
-        return;
-    }
+        let users = JSON.parse(localStorage.getItem("usuarios")) || [];
 
-    users.push({ name, email, password });
-    localStorage.setItem("users", JSON.stringify(users));
+        // Validar que no exista el correo
+        const userExists = users.some(user => user.email === email);
+        if (userExists) {
+            alert("El correo ya está registrado.");
+            return;
+        }
 
-    alert("Usuario registrado con éxito 🎉");
-    document.getElementById("registerName").value = "";
-    document.getElementById("registerEmail").value = "";
-    document.getElementById("registerPassword").value = "";
-    document.getElementById("confirmPassword").value = "";
+        users.push({ name, email, password });
+        localStorage.setItem("usuarios", JSON.stringify(users));
+
+        alert("✅ Registro exitoso. Ahora puedes iniciar sesión.");
+        document.getElementById("registerName").value = "";
+        document.getElementById("registerEmail").value = "";
+        document.getElementById("registerPassword").value = "";
+        document.getElementById("confirmPassword").value = "";
+    });
 });

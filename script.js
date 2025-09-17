@@ -1,6 +1,20 @@
-// Script general para inicializar cosas
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("TELKES cargado ✅");
+    const datosUsuario = document.getElementById("datos-usuario");
+    const btnLogout = document.getElementById("btn-logout");
+    const btnOpenLogin = document.getElementById("btn-open-login");
 
-    // Aquí puedes añadir funciones globales si luego necesitas
+    const usuarioActivo = JSON.parse(localStorage.getItem("usuarioActivo"));
+
+    if (usuarioActivo) {
+        datosUsuario.textContent = `Bienvenido, ${usuarioActivo.name}`;
+        datosUsuario.classList.remove("oculto");
+        btnLogout.classList.remove("oculto");
+        btnOpenLogin.classList.add("oculto");
+    }
+
+    btnLogout.addEventListener("click", () => {
+        localStorage.removeItem("usuarioActivo");
+        alert("Has cerrado sesión.");
+        location.reload();
+    });
 });
