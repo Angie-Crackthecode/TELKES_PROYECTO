@@ -23,11 +23,11 @@
       border-radius: 20px;
     }
     .navbar-toggler-icon {
-        background-image: url(mas.png);
+        background-image: url('../IMG/mas.png');
     }
 
     .presentacion {
-        background-image: url("telkes.jpg");
+        background-image: url('../IMG/telkes.jpg');
         background-size: cover;
         background-position: center;
         display: flex;
