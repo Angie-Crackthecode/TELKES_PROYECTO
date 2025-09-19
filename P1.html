@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,26 @@
             color: #333;
             margin: 0;
             padding: 0;
+        }
+
+        .back-btn {
+            border-radius: 999px;
+            padding: 10px 18px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            background-color: #ffffff;
+            border: 2px solid #800080;
+            /* morado brand */
+            color: #800080;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, .06);
+            transition: .2s ease;
+        }
+
+        .back-btn:hover {
+            background-color: #800080;
+            color: #fff;
+            transform: translateY(-1px);
         }
 
         .header {
@@ -44,7 +65,7 @@
             background-color: white;
             padding: 30px;
             border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
             margin-bottom: 40px;
         }
 
@@ -81,10 +102,11 @@
             font-size: 1.1rem;
             line-height: 1.7;
         }
-        
+
         .video-container {
             position: relative;
-            padding-bottom: 56.25%; /* Proporción 16:9 */
+            padding-bottom: 56.25%;
+            /* Proporción 16:9 */
             height: 0;
             overflow: hidden;
             max-width: 100%;
@@ -99,7 +121,7 @@
             width: 100%;
             height: 100%;
         }
-        
+
         blockquote {
             font-size: 1.4rem;
             font-style: italic;
@@ -115,9 +137,9 @@
             color: #777;
             margin-top: 40px;
         }
-
     </style>
 </head>
+
 <body>
 
     <header class="header">
@@ -126,32 +148,55 @@
     </header>
 
     <main class="container">
+        <!-- Para regresar -->
+        <div class="container my-3">
+            <a href="Peruanas.html" class="btn back-btn"
+                onclick="if (history.length > 1) { history.back(); return false; }">
+                ← Volver a Peruanas
+            </a>
+        </div>
 
         <section class="profile-section">
             <img src="https://elperuano.pe/fotografia/thumbnail/2022/01/17/000146975M.jpg" alt="Foto de Aracely Quispe">
             <div class="bio">
                 <h2>Una Vida de Perseverancia</h2>
-                <p>Nacida en Lambayeque, Aracely Quispe soñó desde niña con alcanzar las estrellas. Su camino, marcado por el esfuerzo y la superación de obstáculos, la llevó desde un pequeño distrito en Perú hasta los pasillos de la NASA, convirtiéndose en un referente de que los sueños se cumplen con dedicación.</p>
+                <p>Nacida en Lambayeque, Aracely Quispe soñó desde niña con alcanzar las estrellas. Su camino, marcado
+                    por el esfuerzo y la superación de obstáculos, la llevó desde un pequeño distrito en Perú hasta los
+                    pasillos de la NASA, convirtiéndose en un referente de que los sueños se cumplen con dedicación.</p>
             </div>
         </section>
 
         <section class="section">
             <h2>Logros que Hacen Historia</h2>
-            <p>Aracely es ingeniera aeroespacial y ha sido parte fundamental de misiones históricas. Su logro más destacado fue su rol como **líder de vuelos y operaciones del Telescopio Espacial James Webb (JWST), el observatorio más potente jamás construido por la humanidad. Su trabajo aseguró que el telescopio se desplegara y operara correctamente en el espacio, abriendo una nueva ventana para entender el universo.</p>
-            <p>Antes del James Webb, también fue parte del equipo de la misión **Orbitador de Reconocimiento Lunar (LRO)**, que ha sido crucial para mapear la superficie de la Luna en preparación para futuras misiones tripuladas.</p>
+            <p>Aracely es ingeniera aeroespacial y ha sido parte fundamental de misiones históricas. Su logro más
+                destacado fue su rol como **líder de vuelos y operaciones del Telescopio Espacial James Webb (JWST), el
+                observatorio más potente jamás construido por la humanidad. Su trabajo aseguró que el telescopio se
+                desplegara y operara correctamente en el espacio, abriendo una nueva ventana para entender el universo.
+            </p>
+            <p>Antes del James Webb, también fue parte del equipo de la misión **Orbitador de Reconocimiento Lunar
+                (LRO)**, que ha sido crucial para mapear la superficie de la Luna en preparación para futuras misiones
+                tripuladas.</p>
         </section>
 
         <section class="section">
             <h2>Inspirando a las Mujeres y Niñas del Perú</h2>
-            <p>El impacto de Aracely va más allá de sus logros profesionales. Se ha convertido en un poderoso modelo a seguir, especialmente para las mujeres y niñas peruanas. A través de conferencias y su historia personal, demuestra que el género o el lugar de origen no son barreras para alcanzar metas extraordinarias en campos como la ciencia y la tecnología (STEAM).</p>
+            <p>El impacto de Aracely va más allá de sus logros profesionales. Se ha convertido en un poderoso modelo a
+                seguir, especialmente para las mujeres y niñas peruanas. A través de conferencias y su historia
+                personal, demuestra que el género o el lugar de origen no son barreras para alcanzar metas
+                extraordinarias en campos como la ciencia y la tecnología (STEAM).</p>
             <blockquote>"No creo en la suerte, uno es el propio arquitecto de su vida."</blockquote>
-            <p>Esta frase, que comparte en sus charlas, resume su filosofía. Aracely inspira a miles a tomar el control de su destino, a estudiar, a perseverar y a nunca dejar de soñar, sin importar lo lejanas que parezcan las estrellas.</p>
+            <p>Esta frase, que comparte en sus charlas, resume su filosofía. Aracely inspira a miles a tomar el control
+                de su destino, a estudiar, a perseverar y a nunca dejar de soñar, sin importar lo lejanas que parezcan
+                las estrellas.</p>
         </section>
 
         <section class="section">
             <h2>Video Inspirador</h2>
             <div class="video-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/MbPRmjUaWPM?si=rMRlqOWlkXWJVsna" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/MbPRmjUaWPM?si=rMRlqOWlkXWJVsna"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
         </section>
 

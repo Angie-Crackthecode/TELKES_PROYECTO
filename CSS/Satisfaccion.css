@@ -1,0 +1,294 @@
+/* --- ESTILOS PARA EL ENCABEZADO PRINCIPAL (Nuevo Estilo con Imagen) --- */
+
+
+
+
+
+.main-header {
+    /* --- Aquí aplicamos tu imagen como fondo --- */
+    background-image: url('image_359f6d.png'); /* <-- NOMBRE EXACTO DE TU IMAGEN */
+    
+    /* Propiedades para que la imagen se ajuste correctamente */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    padding: 20px 0; /* Aumentamos el espacio para que la imagen se aprecie más */
+    width: 100%;
+    border-bottom: 2px solid var(--border-color); /* Un borde sutil para separar del contenido */
+}
+
+.header-content {
+    width: 920px;
+    max-width: 95%;
+    margin: 0 auto; /* Centra el contenido del header */
+    display: flex;
+    justify-content: space-between; /* Separa el logo de la navegación */
+    align-items: center; /* Alinea verticalmente los elementos */
+}
+
+.logo {
+    font-family: "Lobster", cursive;
+    font-size: 28px;
+    color: var(--purple-dark);
+    /* Sombra de texto para mejorar la legibilidad sobre la imagen */
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
+}
+
+.main-nav {
+    display: flex;
+    gap: 20px; /* Espacio entre los enlaces */
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--purple-dark); /* Color más oscuro para mejor contraste */
+    font-weight: 600;
+    font-size: 15px; /* Un poco más grande para legibilidad */
+    padding: 8px 4px;
+    position: relative;
+    transition: color 0.3s ease;
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.7);
+}
+
+.main-nav a:hover {
+    color: var(--accent);
+}
+
+/* Línea animada que aparece debajo del enlace al pasar el mouse */
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent);
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.main-nav a:hover::after {
+    transform: scaleX(1);
+}
+
+:root{
+  --bg: #e6d4f0;       /* fondo de la página */
+  --left-bg: #f7f0fb;  /* fondo panel izquierdo */
+  --purple-dark: #3c1d57; /* panel derecho */
+  --accent: #8e44ad;   /* botón/elementos morado */
+  --accent-dark: #732d91;
+  --text: #222;
+  --muted: #6b617a;
+  --progress: #6fa0ff;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:"Open Sans", Arial, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* pequeño header top-left */
+.page-header{
+  position:fixed;
+  left:10px;
+  top:6px;
+  font-size:13px;
+  color:#6b617a;
+}
+
+/* contenedor general */
+.container{
+  width:920px;
+  max-width:95%;
+  margin:38px auto;
+  display:flex;
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 6px 18px rgba(0,0,0,0.12);
+}
+
+/* LEFT */
+.left{
+  width:62%;
+  background:var(--left-bg);
+  padding:28px 32px;
+  min-height:520px;
+}
+
+.title{
+  font-family:"Lobster", cursive;
+  color:#1f1331;
+  margin:0 0 4px 0;
+  font-size:28px;
+}
+
+.subtitle{
+  margin:0 0 6px 0;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.step{
+  font-size:12px;
+  color:var(--muted);
+}
+
+.progress{
+  width:55%;
+  height:8px;
+  background:#ded7f0;
+  border-radius:30px;
+  margin:10px 0 18px 0;
+  overflow:hidden;
+}
+.progress-bar{
+  height:100%;
+  background:var(--progress);
+  border-radius:30px;
+}
+
+/* Preguntas */
+.pregunta{
+  margin:12px 0;
+}
+
+.label{
+  display:block;
+  font-weight:600;
+  margin-bottom:8px;
+  font-size:15px;
+}
+
+/* inputs y textarea */
+input[type="text"], textarea{
+  width:100%;
+  padding:8px 12px;
+  border-radius:18px;
+  border:1px solid #cfc7da;
+  background:transparent;
+  outline:none;
+  font-size:14px;
+}
+textarea{ border-radius:12px; min-height:54px; padding-top:10px; }
+
+/* Estrellas: grandes y horizontales */
+.estrellas{
+  display:flex;
+  gap:6px;
+  align-items:center;
+  font-size:28px;
+  user-select:none;
+}
+.star{
+  cursor:pointer;
+  color:#bfc6cf;           /* vacío */
+  transition: color .12s, transform .12s;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.05);
+}
+.star.filled{ color:#f39c12; transform: scale(1.08); }
+.texto-valor{ margin:4px 0 0 0; color:var(--accent); font-size:13px; font-weight:600; }
+
+/* radios estilo punto negro (simula la imagen) */
+.opciones { display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
+.radios-inline { align-items:center; }
+
+.custom-radio{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  cursor:pointer;
+  font-size:14px;
+  color:#222;
+  user-select:none;
+}
+.custom-radio input{ display:none; }
+
+/* pseudo-círculo antes del texto */
+.custom-radio span{
+  position:relative;
+  padding-left:0;
+}
+.custom-radio span::before{
+  content:"";
+  display:inline-block;
+  width:14px;
+  height:14px;
+  border-radius:50%;
+  background:#111; /* punto negro, por defecto vacío como imagen */
+  margin-right:6px;
+  box-shadow: inset 0 -2px 0 rgba(0,0,0,0.2);
+  vertical-align:middle;
+  transform: translateY(-1px);
+  opacity:0.95;
+}
+
+/* cuando el input está seleccionado, hacemos un borde para diferenciar */
+.custom-radio input:checked + span::after{
+  content:"";
+  position:absolute;
+  width:8px;height:8px;border-radius:50%;
+  background:#fff; left:3px; top:3px;
+  box-shadow:0 0 0 2px var(--accent);
+}
+
+/* BOTÓN */
+.btn{
+  margin-top:18px;
+  display:block;
+  width:220px;
+  padding:9px 16px;
+  border-radius:20px;
+  border:none;
+  background:var(--accent);
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+}
+.btn:hover{ background:var(--accent-dark); }
+
+/* RIGHT */
+.right{
+  width:38%;
+  background: linear-gradient(180deg, #3c1d57 0%, #2e143f 100%);
+  padding:28px 18px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:space-around;
+  gap:22px;
+  position:relative;
+}
+
+/* tarjetas con bordes redondeados (imitan la imagen) */
+.card{
+  width:84%;
+  height:42%;
+  max-height:220px;
+  background:rgba(255,255,255,0.06);
+  border-radius:28px;
+  padding:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  box-shadow: inset 0 -8px 0 rgba(255,255,255,0.02);
+}
+.card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:18px;
+}
+
+/* adaptaciones móviles */
+@media (max-width:900px){
+  .container{ flex-direction:column; gap:18px; padding:12px; }
+  .left, .right { width:100%;}
+  .right{ padding:18px; }
+  .card{ width:92%; height:170px; }
+}
+

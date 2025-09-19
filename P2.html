@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +15,8 @@
         }
 
         .header {
-            background-color: #610b5d; /* Mismo color de cabecera */
+            background-color: #610b5d;
+            /* Mismo color de cabecera */
             color: white;
             padding: 50px 20px;
             text-align: center;
@@ -45,14 +47,15 @@
             background-color: white;
             padding: 30px;
             border-radius: 12px;
-            box-shadow: 0 5px B20px rgba(0,0,0,0.05);
+            box-shadow: 0 5px B20px rgba(0, 0, 0, 0.05);
             margin-bottom: 40px;
         }
 
         .profile-section img {
             width: 150px;
             height: 150px;
-            border-radius: 50%; /* Imagen circular */
+            border-radius: 50%;
+            /* Imagen circular */
             object-fit: cover;
             margin-right: 30px;
             border: 4px solid #e9ecef;
@@ -65,10 +68,10 @@
         }
 
         .profile-section .bio p {
-             font-size: 1.1rem;
-             line-height: 1.6;
+            font-size: 1.1rem;
+            line-height: 1.6;
         }
-        
+
         /* Estilo para las otras secciones */
         .section {
             background-color: white;
@@ -85,55 +88,97 @@
             margin-top: 0;
         }
 
-        .section p, .section li {
+        .section p,
+        .section li {
             font-size: 1.1rem;
             line-height: 1.7;
         }
 
+        .back-btn {
+            border-radius: 999px;
+            padding: 10px 18px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            background-color: #ffffff;
+            border: 2px solid #800080;
+            /* morado brand */
+            color: #800080;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, .06);
+            transition: .2s ease;
+        }
+
+        .back-btn:hover {
+            background-color: #800080;
+            color: #fff;
+            transform: translateY(-1px);
+        }
     </style>
 </head>
-<body>
 
+<body>
     <header class="header">
         <h1>Mariana Costa Checa</h1>
         <p>Cofundadora y CEO de Laboratoria</p>
     </header>
+    <!-- Para regresar -->
+    <div class="container my-3">
+        <a href="Peruanas.html" class="btn back-btn"
+            onclick="if (history.length > 1) { history.back(); return false; }">
+            ← Volver a Peruanas
+        </a>
+    </div>
 
     <main class="container">
 
         <section class="profile-section">
-            <img src="https://sudaca.pe/wp-content/uploads/mariana-costa-y-el-camino-de-empoderar-mujeres-con-la-tecnologia20-03-2021-1.jpg" alt="Foto de Mariana Costa Checa">
+            <img src="https://sudaca.pe/wp-content/uploads/mariana-costa-y-el-camino-de-empoderar-mujeres-con-la-tecnologia20-03-2021-1.jpg"
+                alt="Foto de Mariana Costa Checa">
             <div class="bio">
                 <h2>Emprendedora Social</h2>
-                <p>Mariana es una emprendedora social peruana enfocada en transformar el sector tecnológico de América Latina. Graduada de prestigiosas universidades como la London School of Economics y Columbia, decidió aplicar su conocimiento para generar un cambio profundo en su región.</p>
+                <p>Mariana es una emprendedora social peruana enfocada en transformar el sector tecnológico de América
+                    Latina. Graduada de prestigiosas universidades como la London School of Economics y Columbia,
+                    decidió aplicar su conocimiento para generar un cambio profundo en su región.</p>
             </div>
         </section>
 
         <section class="section">
             <h2>Laboratoria: Un Proyecto que Transforma</h2>
-            <p>En 2014, Mariana cofundó Laboratoria, una organización con la misión de formar a mujeres como desarrolladoras de software y especialistas en tecnología. El proyecto busca revertir la baja presencia femenina en el sector digital, capacitando a mujeres que no han tenido acceso a educación de calidad y conectándolas con empleos bien remunerados que impulsan su desarrollo profesional.</p>
-            <p>El modelo de Laboratoria ha demostrado ser un éxito, expandiéndose desde Perú a otros países de Latinoamérica y transformando la vida de miles de mujeres y sus familias.</p>
+            <p>En 2014, Mariana cofundó Laboratoria, una organización con la misión de formar a mujeres como
+                desarrolladoras de software y especialistas en tecnología. El proyecto busca revertir la baja presencia
+                femenina en el sector digital, capacitando a mujeres que no han tenido acceso a educación de calidad y
+                conectándolas con empleos bien remunerados que impulsan su desarrollo profesional.</p>
+            <p>El modelo de Laboratoria ha demostrado ser un éxito, expandiéndose desde Perú a otros países de
+                Latinoamérica y transformando la vida de miles de mujeres y sus familias.</p>
         </section>
 
         <section class="section">
             <h2>Reconocimientos e Impacto Global</h2>
-            <p>El trabajo de Mariana ha recibido reconocimiento a nivel mundial por su impacto en la inclusión y la diversidad. Algunos de sus logros más destacados incluyen:</p>
+            <p>El trabajo de Mariana ha recibido reconocimiento a nivel mundial por su impacto en la inclusión y la
+                diversidad. Algunos de sus logros más destacados incluyen:</p>
             <ul>
-                <li>Ser elegida como una de las 100 mujeres más influyentes e inspiradoras del mundo por la BBC en 2016.</li>
-                <li>Participar en un panel de discusión junto al expresidente Barack Obama y Mark Zuckerberg en la Cumbre Global de Emprendimiento.</li>
+                <li>Ser elegida como una de las 100 mujeres más influyentes e inspiradoras del mundo por la BBC en 2016.
+                </li>
+                <li>Participar en un panel de discusión junto al expresidente Barack Obama y Mark Zuckerberg en la
+                    Cumbre Global de Emprendimiento.</li>
                 <li>Ser incluida en la lista de los 'Next Generation Leaders' de la revista Time.</li>
             </ul>
-            <p>Su liderazgo no solo ha creado oportunidades, sino que también ha inspirado a una nueva generación de mujeres a verse como creadoras y protagonistas del futuro digital.</p>
+            <p>Su liderazgo no solo ha creado oportunidades, sino que también ha inspirado a una nueva generación de
+                mujeres a verse como creadoras y protagonistas del futuro digital.</p>
         </section>
 
         <section class="section">
             <h2>Video Inspirador</h2>
             <div class="video-container">
-                <iframe width="560" height="400" src="https://www.youtube.com/embed/Q_NOl0Gdekg?si=lBrzD18FTiV11AOF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe width="560" height="400" src="https://www.youtube.com/embed/Q_NOl0Gdekg?si=lBrzD18FTiV11AOF"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
         </section>
 
     </main>
 
 </body>
+
 </html>

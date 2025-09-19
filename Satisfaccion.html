@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Encuesta de Opinión</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/Satisfaccion.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="left">
+            <div id="form-container">
+                <h1 class="title">Queremos conocer tu opinión</h1>
+                <p class="subtitle">"Tu experiencia nos ayuda a mejorar cada día"</p>
+
+                <form id="encuesta" action="guardar.php" method="POST" novalidate>
+                    <div class="progress">
+                        <div class="progress-bar" id="progress-bar"></div>
+                    </div>
+
+                    <div class="form-step active">
+                        <div class="pregunta">
+                            <label class="label">1. ¿Cómo calificarías tu experiencia en nuestra página?</label>
+                            <div class="estrellas">
+                                <input type="hidden" name="experiencia" id="experiencia_val">
+                                <span class="star" data-value="1">★</span>
+                                <span class="star" data-value="2">★</span>
+                                <span class="star" data-value="3">★</span>
+                                <span class="star" data-value="4">★</span>
+                                <span class="star" data-value="5">★</span>
+                            </div>
+                            <p id="valor-estrellas" class="texto-valor"></p>
+                        </div>
+                    </div>
+
+                    <div class="form-step">
+                        <div class="pregunta">
+                            <label class="label">2. ¿Qué fue lo que más te gustó?</label>
+                            <input type="text" name="lo_mejor" placeholder="Dinos tu opinión...">
+                        </div>
+                    </div>
+
+                    <div class="form-step">
+                        <div class="pregunta">
+                            <label class="label">3. ¿Qué podríamos mejorar?</label>
+                            <textarea name="mejorar" rows="3" placeholder="Cuéntanos qué te gustaría que cambiemos..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-step">
+                        <div class="pregunta">
+                            <label class="label">4. ¿Nos recomendarías a un amigo o familiar?</label>
+                            <div class="opciones radios-inline">
+                                <label class="radio"><input type="radio" name="recomendar" value="Sí"><span>Sí</span></label>
+                                <label class="radio"><input type="radio" name="recomendar" value="No"><span>No</span></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-step">
+                        <div class="pregunta">
+                            <label class="label">5. ¿Fue fácil navegar por nuestra página?</label>
+                            <div class="opciones radios-inline">
+                                <label class="radio"><input type="radio" name="facilidad" value="Muy fácil"><span>Muy fácil</span></label>
+                                <label class="radio"><input type="radio" name="facilidad" value="Fácil"><span>Fácil</span></label>
+                                <label class="radio"><input type="radio" name="facilidad" value="Difícil"><span>Difícil</span></label>
+                                <label class="radio"><input type="radio" name="facilidad" value="Muy difícil"><span>Muy difícil</span></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-step">
+                        <div class="pregunta">
+                            <label class="label">6. ¿Encontraste la información que buscabas?</label>
+                            <div class="opciones radios-inline">
+                                <label class="radio"><input type="radio" name="info" value="Sí"><span>Sí</span></label>
+                                <label class="radio"><input type="radio" name="info" value="Parcialmente"><span>Parcialmente</span></label>
+                                <label class="radio"><input type="radio" name="info" value="No"><span>No</span></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-step">
+                        <div class="pregunta">
+                            <label class="label">7. ¿Qué te motiva a volver a nuestra página?</label>
+                            <div class="opciones radios-inline">
+                                <label class="radio"><input type="radio" name="motivo" value="Calidad"><span>Calidad</span></label>
+                                <label class="radio"><input type="radio" name="motivo" value="Facilidad de uso"><span>Facilidad de uso</span></label>
+                                <label class="radio"><input type="radio" name="motivo" value="Atención"><span>Atención</span></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-step">
+                        <div class="pregunta">
+                            <label class="label">8. ¿Cómo calificarías la velocidad de carga?</label>
+                            <div class="opciones radios-inline">
+                                <label class="radio"><input type="radio" name="velocidad" value="Excelente"><span>Excelente</span></label>
+                                <label class="radio"><input type="radio" name="velocidad" value="Buena"><span>Buena</span></label>
+                                <label class="radio"><input type="radio" name="velocidad" value="Regular"><span>Regular</span></label>
+                                <label class="radio"><input type="radio" name="velocidad" value="Mala"><span>Mala</span></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-step">
+                        <div class="pregunta">
+                            <label class="label">9. ¿Qué opinas del diseño visual de la página?</label>
+                            <div class="opciones radios-inline">
+                                <label class="radio"><input type="radio" name="diseno" value="Muy atractivo"><span>Muy atractivo</span></label>
+                                <label class="radio"><input type="radio" name="diseno" value="Aceptable"><span>Aceptable</span></label>
+                                <label class="radio"><input type="radio" name="diseno" value="Poco atractivo"><span>Poco atractivo</span></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-step">
+                        <div class="pregunta">
+                            <label class="label">10. ¿Te sientes seguro/a al usar nuestra página?</label>
+                            <div class="opciones radios-inline">
+                                <label class="radio"><input type="radio" name="seguridad" value="Sí"><span>Sí</span></label>
+                                <label class="radio"><input type="radio" name="seguridad" value="No"><span>No</span></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-step">
+                        <div class="pregunta">
+                            <label class="label">11. ¿Consideras que la información de nuestra página es confiable?</label>
+                            <div class="opciones radios-inline">
+                                <label class="radio"><input type="radio" name="confianza" value="Totalmente"><span>Sí, totalmente</span></label>
+                                <label class="radio"><input type="radio" name="confianza" value="Parcialmente"><span>Parcialmente</span></label>
+                                <label class="radio"><input type="radio" name="confianza" value="No"><span>No</span></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-step">
+                        <div class="pregunta">
+                            <label class="label">12. ¿Cuánto tiempo aproximadamente pasaste en nuestra página?</label>
+                            <div class="opciones radios-inline">
+                                <label class="radio"><input type="radio" name="tiempo" value="Menos de 5 min"><span>Menos de 5 min</span></label>
+                                <label class="radio"><input type="radio" name="tiempo" value="5-15 min"><span>5–15 min</span></label>
+                                <label class="radio"><input type="radio" name="tiempo" value="Más de 15 min"><span>Más de 15 min</span></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-step">
+                        <div class="pregunta">
+                            <label class="label">13. ¿Nuestra página cumplió con tus expectativas?</label>
+                            <div class="opciones radios-inline">
+                                <label class="radio"><input type="radio" name="expectativas" value="Superó"><span>Superó</span></label>
+                                <label class="radio"><input type="radio" name="expectativas" value="Cumplió"><span>Cumplió</span></label>
+                                <label class="radio"><input type="radio" name="expectativas" value="No cumplió"><span>No cumplió</span></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-step">
+                        <div class="pregunta">
+                            <label class="label">14. ¿Con qué frecuencia crees que volverás a visitar nuestra página?</label>
+                            <div class="opciones radios-inline">
+                                <label class="radio"><input type="radio" name="frecuencia" value="Muy seguido"><span>Muy seguido</span></label>
+                                <label class="radio"><input type="radio" name="frecuencia" value="De vez en cuando"><span>De vez en cuando</span></label>
+                                <label class="radio"><input type="radio" name="frecuencia" value="Rara vez"><span>Rara vez</span></label>
+                                <label class="radio"><input type="radio" name="frecuencia" value="No volvería"><span>No volvería</span></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-step">
+                        <div class="pregunta">
+                            <label class="label">15. En general, ¿qué tan satisfecho estás?</label>
+                            <div class="opciones radios-inline">
+                                <label class="radio"><input type="radio" name="satisfaccion" value="Muy satisfecho"><span>Muy satisfecho</span></label>
+                                <label class="radio"><input type="radio" name="satisfaccion" value="Satisfecho"><span>Satisfecho</span></label>
+                                <label class="radio"><input type="radio" name="satisfaccion" value="Neutral"><span>Neutral</span></label>
+                                <label class="radio"><input type="radio" name="satisfaccion" value="Insatisfecho"><span>Insatisfecho</span></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="navigation-buttons">
+                        <button type="button" class="btn btn-prev">Anterior</button>
+                        <button type="button" class="btn btn-next">Siguiente</button>
+                        <button type="submit" class="btn btn-submit">Enviar mi opinión</button>
+                    </div>
+                </form>
+            </div>
+
+            <div id="thank-you-message" style="display: none;">
+                <h1 class="title">¡Gracias por tu opinión!</h1>
+                <p class="subtitle">Valoramos mucho tu tiempo y tus comentarios.</p>
+            </div>
+        </div>
+
+        <div class="right">
+            <div class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmpPQCQjQLl-9uPzzwnGtaB9EhUUV3oB77D6dbPCWxV0uk7EHD" alt="Imagen 1">
+            </div>
+            <div class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmpPQCQjQLl-9uPzzwnGtaB9EhUUV3oB77D6dbPCWxV0uk7EHD" alt="Imagen 2">
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
