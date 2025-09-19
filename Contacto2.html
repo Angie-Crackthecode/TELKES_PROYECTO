@@ -5,37 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Telkes | Contacto</title>
     <link rel="stylesheet" href="CSS/Contacto2.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
     <header>
       <!-- Bootstrap NAVBAR-->
-        <nav class="navbar navbar-expand-lg fixed-top">
-            <div class="container">
-                <a class="navbar-brand text-white" href="#">TELKES</a>
-                <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
+      <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+          <a class="navbar-brand text-white" href="#">TELKES</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">INICIO</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Peruanas.html">PERUANAS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="oportunidades.html">OPORTUNIDADES</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Contacto2.html">CONTACTO</a>
+              </li>
+              <div class="d-flex">
+                <p id="datos-usuario" class="oculto"></p>
+                <button class="btn btn-outline oculto" id="btn-logout">
+                  CERRAR SESION
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="index.html">INICIO</a></li>
-                        <li class="nav-item"><a class="nav-link" href="Peruanas.html">PERUANAS</a></li>
-                        <li class="nav-item"><a class="nav-link" href="oportunidades.html">OPORTUNIDADES</a></li>
-                        <li class="nav-item"><a class="nav-link" href="Contacto2.html">CONTACTO</a></li>
-                        <div class="d-flex">
-                            <p id="datos-usuario" class="oculto"></p>
-                            <button class="btn btn-outline oculto" id="btn-logout">
-                                CERRAR SESION
-                            </button>
-                            <button class="btn btn-outline" data-bs-toggle="modal" data-bs-target="#loginModal" id="btn-open-login">
-                                INICIAR SESION
-                            </button>
-                        </div>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <!--Fin del Navbar -->
+                <button
+                  class="btn btn-outline"
+                  data-bs-toggle="modal"
+                  data-bs-target="#loginModal"
+                  id="btn-open-login"
+                >
+                  INICIAR SESION
+                </button>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!--Fin del Navbar -->
     </header>
 
     <main class="contact-section">
@@ -160,82 +183,170 @@
       <div class="modal-content">
         <h3 class="modal-title">Telkes</h3>
         <p class="modal-message">
-          Mensaje enviado, te estaremos contactando lo antes posible.
-          Sigue siendo igual de genial!
+          Mensaje enviado, te estaremos contactando lo antes posible. Sigue
+          siendo igual de genial!
         </p>
         <button class="modal-close-btn">Cerrar</button>
       </div>
     </div>
 
     <!-- Modal de login -->
-        <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="loginModalLabel">Iniciar Sesión</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="mb-3">
-                                <label for="loginEmail" class="form-label">Correo electrónico</label>
-                                <input type="email" class="form-control" id="loginEmail" placeholder="nombre@ejemplo.com">
-                            </div>
-                            <div class="mb-3">
-                                <label for="loginPassword" class="form-label">Contraseña</label>
-                                <input type="password" class="form-control" id="loginPassword" placeholder="********">
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer d-flex justify-content-between">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-primary" id="btn-login">Ingresar</button>
-                        <button type="button" class="btn btn-link" id="btn-open-register" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal">
-                            ¿No tienes cuenta? Regístrate
-                        </button>
-                    </div>
-                </div>
-            </div>
+    <div
+      class="modal fade"
+      id="loginModal"
+      tabindex="-1"
+      aria-labelledby="loginModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="loginModalLabel">Iniciar Sesión</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="loginEmail" class="form-label"
+                  >Correo electrónico</label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  id="loginEmail"
+                  placeholder="nombre@ejemplo.com"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="loginPassword" class="form-label">Contraseña</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="loginPassword"
+                  placeholder="********"
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer d-flex justify-content-between">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
+            <button type="button" class="btn btn-primary" id="btn-login">
+              Ingresar
+            </button>
+            <button
+              type="button"
+              class="btn btn-link"
+              id="btn-open-register"
+              data-bs-toggle="modal"
+              data-bs-target="#registerModal"
+              data-bs-dismiss="modal"
+            >
+              ¿No tienes cuenta? Regístrate
+            </button>
+          </div>
         </div>
-        <!-- Fin Login -->
+      </div>
+    </div>
+    <!-- Fin Login -->
 
     <!-- Modal de registro -->
-        <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="registerModalLabel">Registro de Usuario</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="mb-3">
-                                <label for="registerName" class="form-label">Nombre de Usuario</label>
-                                <input type="text" class="form-control" id="registerName" placeholder="Tu nombre completo">
-                            </div>
-                            <div class="mb-3">
-                                <label for="registerEmail" class="form-label">Correo electrónico</label>
-                                <input type="email" class="form-control" id="registerEmail" placeholder="nombre@ejemplo.com">
-                            </div>
-                            <div class="mb-3">
-                                <label for="registerPassword" class="form-label">Contraseña</label>
-                                <input type="password" class="form-control" id="registerPassword" placeholder="********">
-                            </div>
-                            <div class="mb-3">
-                                <label for="confirmPassword" class="form-label">Confirmar Contraseña</label>
-                                <input type="password" class="form-control" id="confirmPassword" placeholder="********">
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer d-flex justify-content-between">
-                        <button type="button" class="btn btn-secondary" id="btn-back-to-login" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#loginModal">
-                            Regresar a Iniciar Sesión
-                        </button>
-                        <button type="button" class="btn btn-success" id="btn-register">Registrar</button>
-                    </div>
-                </div>
-            </div>
+    <div
+      class="modal fade"
+      id="registerModal"
+      tabindex="-1"
+      aria-labelledby="registerModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="registerModalLabel">
+              Registro de Usuario
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="registerName" class="form-label"
+                  >Nombre de Usuario</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="registerName"
+                  placeholder="Tu nombre completo"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="registerEmail" class="form-label"
+                  >Correo electrónico</label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  id="registerEmail"
+                  placeholder="nombre@ejemplo.com"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="registerPassword" class="form-label"
+                  >Contraseña</label
+                >
+                <input
+                  type="password"
+                  class="form-control"
+                  id="registerPassword"
+                  placeholder="********"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="confirmPassword" class="form-label"
+                  >Confirmar Contraseña</label
+                >
+                <input
+                  type="password"
+                  class="form-control"
+                  id="confirmPassword"
+                  placeholder="********"
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer d-flex justify-content-between">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              id="btn-back-to-login"
+              data-bs-dismiss="modal"
+              data-bs-toggle="modal"
+              data-bs-target="#loginModal"
+            >
+              Regresar a Iniciar Sesión
+            </button>
+            <button type="button" class="btn btn-success" id="btn-register">
+              Registrar
+            </button>
+          </div>
         </div>
+      </div>
+    </div>
     <!-- Fin de registro -->
 
     <!-- Bootstrap JS Bundle (Popper + Bootstrap JS) -->
