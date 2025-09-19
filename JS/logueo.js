@@ -12,6 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const users = JSON.parse(localStorage.getItem("usuarios")) || [];
         const user = users.find(u => u.email === email && u.password === password);
+         
+        
 
         if (user) {
             localStorage.setItem("usuarioActivo", JSON.stringify(user));
