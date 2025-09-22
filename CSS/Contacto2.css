@@ -1,3 +1,4 @@
+/* Estilos generales */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -7,24 +8,24 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
-/**/
+
 /* Navbar */
 .navbar {
-      background-color: #800080ff;
-      height: 70px;
-    }
-    .navbar-nav .nav-link {
-      color: white !important;
-      font-weight: 500;
-      padding: 10px 20px;
-    }
-    .navbar-nav .nav-link:hover {
-      background-color: #c78ec7ff;
-      border-radius: 20px;
-    }
-    .navbar-toggler-icon {
-        background-image: url('../IMG/mas.png');
-    }
+  background-color: #800080ff;
+  height: 70px;
+}
+.navbar-nav .nav-link {
+  color: white !important;
+  font-weight: 500;
+  padding: 10px 20px;
+}
+.navbar-nav .nav-link:hover {
+  background-color: #c78ec7ff;
+  border-radius: 20px;
+}
+.navbar-toggler-icon {
+  background-image: url('../IMG/mas.png');
+}
 
 /* Sección de contacto */
 main.contact-section {
@@ -92,6 +93,7 @@ main.contact-section {
   resize: vertical;
 }
 
+/* Botón enviar */
 .contact-form-container form button {
   background-color: #800080ff;
   color: white;
@@ -104,8 +106,9 @@ main.contact-section {
   width: auto;
   margin-top: 15px;
   transition: background-color 0.3s ease;
+  position: relative;       /* FIX: asegura que no quede detrás */
+  z-index: 2;               /* FIX: siempre encima */
 }
-
 .contact-form-container form button:hover {
   background-color: #6a006aff;
 }
@@ -158,7 +161,6 @@ main.contact-section {
   margin: 5px 0;
   line-height: 1;
 }
-
 .carousel-arrow:hover {
   background-color: #6a006aff;
 }
@@ -187,7 +189,7 @@ footer img {
   width: 24px;
 }
 
-/* Diseño para móviles y tablets */
+/* Responsive */
 @media (max-width: 992px) {
   .content-wrapper {
     flex-direction: column;
@@ -210,19 +212,10 @@ footer img {
     max-width: 400px;
   }
   .carousel-images-wrapper {
-    height: 300px; /* Altura para mostrar dos imágenes en tablets */
+    height: 300px;
   }
   .carousel-images img {
-    height: calc(100% / 2); /* Cada imagen ocupa la mitad del contenedor */
-  }
-  .contact-form-container h2 {
-    font-size: 32px;
-  }
-  .contact-form-container p {
-    font-size: 16px;
-  }
-  footer {
-    font-size: 14px;
+    height: calc(100% / 2);
   }
 }
 
@@ -234,12 +227,11 @@ footer img {
     font-size: 15px;
   }
   .carousel-images-wrapper {
-    height: 200px; /* Altura para mostrar una sola imagen en móviles */
+    height: 200px;
   }
   .carousel-images img {
-    height: 100%; /* Una sola imagen */
+    height: 100%;
   }
-  /* Ajustes adicionales para espaciado en móviles */
   .contact-form-container form input,
   .contact-form-container form textarea,
   .contact-form-container form button {
@@ -247,155 +239,198 @@ footer img {
   }
 }
 
-/* Estilos para el modal (ventana emergente) */
+/* Modales */
 .modal-overlay {
-    display: none; /* Oculta el modal por defecto */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000; /* Asegura que esté por encima de todo */
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
 
-.modal-content {
-    background-color: #f8f8f8;
-    padding: 30px 40px;
-    border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    width: 90%;
-    max-width: 450px;
-    transform: scale(0.9);
-    opacity: 0;
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-}
-
-.modal-overlay.active .modal-content {
-    transform: scale(1);
-    opacity: 1;
-}
-
-.modal-title {
-    font-size: 28px;
-    font-weight: bold;
-    color: #800080ff;
-    margin-bottom: 10px;
-}
-
-.modal-message {
-    font-size: 18px;
-    color: #4e244e;
-    margin-bottom: 25px;
-}
-
-.modal-close-btn {
-    background-color: #800080ff;
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 20px;
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.modal-close-btn:hover {
-    background-color: #6a006aff;
-}
-
-/* Ocultar el modal cuando no está activo */
+/* FIX: que el overlay no tape el formulario si no está activo */
 .modal-overlay:not(.active) {
-    pointer-events: none;
-    visibility: hidden;
+  pointer-events: none;
+  visibility: hidden;
 }
 
-/*  Estilos Login/Registro */
+#successModal .modal-content {
+  background-color: #f8f8f8;
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 90%;
+  max-width: 450px;
+  transform: scale(0.9);
+  opacity: 0;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+#successModal.active .modal-content {
+  transform: scale(1);
+  opacity: 1;
+}
 
-/* Ocultar elementos hasta loguear */
+/* Otros estilos login/registro */
 .oculto {
   display: none !important;
 }
-
-/* Texto de usuario */
 #datos-usuario {
-  color: white !important;;
+  color: white !important;
   font-weight: 600;
   margin-right: 10px;
   align-self: center;
 }
-
-/* Botones de login/logout */
 #btn-open-login,
 #btn-logout {
-    color: #800080ff !important;
-    background-color: #c78ec7ff ;
-    border-radius: 20px;
-    padding: 6px 16px;
-    font-weight: 500;
-    transition: all 0.3s ease;
+  color: #800080ff !important;
+  background-color: #c78ec7ff;
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
-
 #btn-open-login:hover,
 #btn-logout:hover {
-    background-color: #c78ec7ff;
-    color: white;
+  background-color: #c78ec7ff;
+  color: white;
 }
 
-
-/*  Estilo para modales */
+/* Estilo de contenido modal */
 .modal-content {
   border-radius: 20px;
   border: none;
   box-shadow: 0 6px 20px rgba(0,0,0,0.2);
 }
-
 .modal-header {
   background-color: #800080ff;
   color: white;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
-
 .modal-title {
   font-weight: 600;
 }
-
 .modal-footer button {
   border-radius: 15px;
 }
 
-/* Botón primario personalizado */
+/* Botones */
 .btn-primary {
   background-color: #800080ff;
   border: none;
 }
-
 .btn-primary:hover {
   background-color: #4b0082;
 }
-
-/* Botón secundario */
 .btn-secondary {
   background-color: #c78ec7ff;
   border: none;
 }
-
 .btn-secondary:hover {
   background-color: #800080ff;
 }
-
-/* Botón de registro */
 .btn-success {
   background-color: #4b0082;
   border: none;
 }
-
 .btn-success:hover {
   background-color: #2e004d;
+}
+
+/* === Modal de éxito (formulario de contacto) === */
+#successModal {
+  display: none;               /* Oculto por defecto */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Cuando JS añade la clase "active", el modal aparece */
+#successModal.active {
+  display: flex;
+}
+
+/* Caja blanca del mensaje */
+#successModal .modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Botón de cerrar dentro del modal */
+#successModal .modal-close-btn {
+  margin-top: 1rem;
+  padding: 0.5rem 1.2rem;
+  background-color: #800080;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#successModal .modal-close-btn:hover {
+  background-color: #5e005e;
+}
+
+/* === Modal: Debe iniciar sesión === */
+#loginRequiredModal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 10000;
+  justify-content: center;
+  align-items: center;
+}
+
+#loginRequiredModal.active {
+  display: flex;
+}
+
+#loginRequiredModal .modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 400px;
+  text-align: center;
+}
+
+#loginRequiredModal .modal-close-btn,
+#loginRequiredModal .modal-login-btn {
+  padding: 0.5rem 1.2rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 0.5rem;
+}
+
+#loginRequiredModal .modal-close-btn {
+  background: #999;
+  color: #fff;
+}
+
+#loginRequiredModal .modal-login-btn {
+  background: #800080;
+  color: #fff;
+}
+#loginRequiredModal .modal-login-btn:hover {
+  background: #5e005e;
 }

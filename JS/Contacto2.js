@@ -1,57 +1,40 @@
-// Índice actual del slide que se muestra (comienza en 0)
+// ============================
+// Carrusel (sin cambios funcionales)
+// ============================
 let currentSlide = 0;
-// NodeList con todas las imágenes dentro del contenedor del carrusel
 const slides = document.querySelectorAll('.carousel-images img');
-// Elemento contenedor del carrusel (donde se aplicará el transform)
 const carousel = document.querySelector('.carousel-images');
-// Número de diapositivas "reales" (se divide entre 2 porque el HTML suele duplicar imágenes
-// para efecto infinito)
 const totalSlides = slides.length / 2;
-// Altura de cada slide (se calculará una vez cargada la imagen)
 let slideHeight;
-// Identificador del intervalo de auto-cambio (para poder detenerlo)
 let autoChangeInterval;
-// Bandera que indica si el carrusel está en medio de una transición
 let isTransitioning = false;
 
-// ============================
-// Inicializa el carrusel
-// ============================
 function initializeCarousel() {
-  const firstImage = slides[0]; //Primera imagen - indice 0
-  if (firstImage) { 
-    firstImage.onload = () => {  //Comprueba si existe
-      slideHeight = firstImage.clientHeight; //Guarda la altura visible
-      startAutoChange(); //Llama a funcion de cambio de imagen
+  const firstImage = slides[0];
+  if (firstImage) {
+    firstImage.onload = () => {
+      slideHeight = firstImage.clientHeight;
+      startAutoChange();
     };
-    if (firstImage.complete) { //Mismo procedimiento si ya esta guardado en cache
+    if (firstImage.complete) {
       slideHeight = firstImage.clientHeight;
       startAutoChange();
     }
   }
 }
 
-//Funcion de tiempo de cambios del carrusel
 function updateCarousel(instant = false) {
-  if (instant) {
-    carousel.style.transition = 'none'; //true: quita animacion
-  } else {
-    carousel.style.transition = 'transform 0.5s ease-in-out'; //false: Cmabia la imagen 0,5s 
-  }
-  //Mueve el forma vertical el cambio con transform
+  carousel.style.transition = instant
+    ? 'none'
+    : 'transform 0.5s ease-in-out';
   carousel.style.transform = `translateY(-${currentSlide * slideHeight}px)`;
 }
 
-//Funcion para cambio de imagen (hacia adelante(1) o atras(-1))
 function changeSlide(direction) {
-  if (isTransitioning) return; //Si hay transicion, no hace nada
-
-  isTransitioning = true; //En transicion
-  currentSlide += direction; //Cambia el indice de la imagen a mas
-
-  updateCarousel(); //Actualiza el carrusel
-
-  // Si se ha llegado al final o al principio, reinicia el índice después de la transición
+  if (isTransitioning) return;
+  isTransitioning = true;
+  currentSlide += direction;
+  updateCarousel();
 
   if (direction === 1 && currentSlide >= totalSlides) {
     setTimeout(() => {
@@ -72,7 +55,6 @@ function changeSlide(direction) {
   }
 }
 
-//Funcion de inicio y parada del cambio automatico
 function startAutoChange() {
   stopAutoChange();
   autoChangeInterval = setInterval(() => {
@@ -80,48 +62,125 @@ function startAutoChange() {
   }, 5000);
 }
 
-//Detiene el cambio automatico cuando se esta escribiendo en el formulario
 function stopAutoChange() {
   clearInterval(autoChangeInterval);
 }
 
-document.querySelectorAll('form input, form textarea, .carousel-arrow').forEach(element => {
-  element.addEventListener('focus', stopAutoChange);
-  element.addEventListener('blur', startAutoChange);
-});
+document
+  .querySelectorAll('form input, form textarea, .carousel-arrow')
+  .forEach((element) => {
+    element.addEventListener('focus', stopAutoChange);
+    element.addEventListener('blur', startAutoChange);
+  });
 
 initializeCarousel();
 
-// Funcionalidad del formulario
-const contactForm = document.querySelector('form'); //Seleccion del primer formulario
-const successModal = document.getElementById('successModal'); //Modal de exito con id
-const closeModalBtn = document.querySelector('.modal-close-btn'); //Boton de cerrar modal
+// ============================
+// Formularios y modales (mejorado)
+// ============================
 
-//Evento de envio del formulario
-if (contactForm) { //Verfifica que el formulario existe
-  contactForm.addEventListener('submit', function(event) { //Ve cuando el formulario se envia
-    event.preventDefault(); //Evita el envio por defecto
-    successModal.classList.add('active'); //Muestra el modal de exito
-  });
+const contactForm = document.querySelector('form'); // primer form (contacto)
+const successModal = document.getElementById('successModal');
+const closeModalBtn = document.querySelector('.modal-close-btn');
+
+const loginRequiredModal = document.getElementById('loginRequiredModal');
+const btnCloseLoginRequired = document.getElementById('btn-close-login-required');
+const btnOpenLoginModal = document.getElementById('btn-open-login-modal');
+
+// variable de estado (se actualizará usando updateLoginState)
+let isLoggedIn = false;
+
+// función que revisa todas las fuentes plausibles de "usuario logueado"
+function updateLoginState() {
+  const fromSession = !!sessionStorage.getItem('usuario');
+  const fromLocal = !!localStorage.getItem('usuario');
+
+  // usa el DOM como respaldo: por ejemplo, #datos-usuario o botón de logout visible
+  const datosEl = document.getElementById('datos-usuario');
+  const datosVisible = datosEl && datosEl.textContent.trim() !== '' && !datosEl.classList.contains('oculto');
+
+  const logoutBtn = document.getElementById('btn-logout');
+  const logoutVisible = logoutBtn && getComputedStyle(logoutBtn).display !== 'none' && !logoutBtn.classList.contains('oculto');
+
+  isLoggedIn = fromSession || fromLocal || datosVisible || logoutVisible;
+  return isLoggedIn;
 }
 
-//Evento de cierre del modal con boton
-if (closeModalBtn) { //Verifica que el boton existe
-  closeModalBtn.addEventListener('click', function() { //Cuando se hace click
-    successModal.classList.remove('active'); //Oculta el modal (remueve active)
-    // Limpiar los campos del formulario
-    contactForm.reset(); 
-  });
-}
+// Inicializa estado al cargar
+updateLoginState();
 
-//Evento de cierre del modal al hacer clic fuera del contenido
-if (successModal) { //Verifica que el modal existe
-    successModal.addEventListener('click', function(event) {//Cuando se hace click en el modal
-        if (event.target === successModal) { //Cuando el click ocurre en el fondo del modal (no en el contenido)
-            successModal.classList.remove('active');
-            // Limpiar los campos del formulario
-            contactForm.reset();
-        }
+// storage listener (se activa si otra pestaña cambia el storage)
+window.addEventListener('storage', () => {
+  updateLoginState();
+});
+
+// MutationObserver para detectar cambios en el DOM (p.ej. si tu logueo.js actualiza #datos-usuario)
+(function attachMutationObservers() {
+  const datosEl = document.getElementById('datos-usuario');
+  const logoutBtn = document.getElementById('btn-logout');
+
+  if (datosEl) {
+    const obs = new MutationObserver(() => {
+      updateLoginState();
     });
+    obs.observe(datosEl, { characterData: true, childList: true, subtree: true, attributes: true });
+  }
+
+  if (logoutBtn) {
+    const obs2 = new MutationObserver(() => {
+      updateLoginState();
+    });
+    obs2.observe(logoutBtn, { attributes: true, childList: false, subtree: false });
+  }
+})();
+
+// Manejo del submit: **siempre recalcula** el estado actual antes de decidir
+if (contactForm) {
+  contactForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    // recalculamos el estado justo ahora
+    const logged = updateLoginState();
+
+    if (!logged) {
+      if (loginRequiredModal) loginRequiredModal.classList.add('active');
+      return;
+    }
+
+    // mostrar modal de éxito
+    if (successModal) successModal.classList.add('active');
+  });
 }
 
+// Botones del modal de aviso
+if (btnCloseLoginRequired) {
+  btnCloseLoginRequired.addEventListener('click', () => {
+    if (loginRequiredModal) loginRequiredModal.classList.remove('active');
+  });
+}
+if (btnOpenLoginModal) {
+  btnOpenLoginModal.addEventListener('click', () => {
+    if (loginRequiredModal) loginRequiredModal.classList.remove('active');
+    const loginModalEl = document.getElementById('loginModal');
+    if (loginModalEl) {
+      const loginModal = new bootstrap.Modal(loginModalEl);
+      loginModal.show();
+    }
+  });
+}
+
+// Cierre modal éxito
+if (closeModalBtn) {
+  closeModalBtn.addEventListener('click', function () {
+    if (successModal) successModal.classList.remove('active');
+    if (contactForm) contactForm.reset();
+  });
+}
+if (successModal) {
+  successModal.addEventListener('click', function (event) {
+    if (event.target === successModal) {
+      successModal.classList.remove('active');
+      if (contactForm) contactForm.reset();
+    }
+  });
+}

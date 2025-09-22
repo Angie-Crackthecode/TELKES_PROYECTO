@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Telkes | Contacto</title>
-    <link rel="stylesheet" href="CSS/Contacto2.css" />
+    <link rel="stylesheet" href="CSS/Contacto2.css">
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -185,6 +185,21 @@
 <button class="modal-close-btn">Cerrar</button>
 </div>
 </div>
+
+<!-- Modal: Debe iniciar sesión -->
+<div class="modal-overlay" id="loginRequiredModal">
+  <div class="modal-content">
+    <h3 class="modal-title">Telkes</h3>
+    <p class="modal-message">
+      Debe iniciar sesión para enviar el mensaje.
+    </p>
+    <div style="margin-top:1rem;">
+      <button class="modal-close-btn" id="btn-close-login-required">Cerrar</button>
+      <button class="modal-login-btn" id="btn-open-login-modal">Iniciar sesión</button>
+    </div>
+  </div>
+</div>
+
 
 <!-- Modal de login -->
 <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
